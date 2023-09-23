@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+  font-family: 'Aeonik', sans-serif;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('../../public/font/Aeonik-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('../../public/font/Aeonik-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('../../public/font/Aeonik-Regular.ttf');
+}
