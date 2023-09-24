@@ -1,3 +1,9 @@
+import WhyFluxity from '@/containers/WhyFluxity';
+
 export default function Home() {
-  return <p>Hello World!</p>;
+  return (
+    <>
+      <WhyFluxity />
+    </>
+  );
 }
