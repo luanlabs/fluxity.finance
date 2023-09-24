@@ -1,9 +1,17 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+
+import CButton from '@/components/Cbutton';
 
 import JoinDancing from '../../public/images/joinDancing.svg';
+import { ExternalPages } from '@/constants/externalPages';
 
 const JoinUs = () => {
+  const router = useRouter();
+
   return (
     <div className="flex justify-center items-center gap-10">
       <div className=" pl-[151px] py-[180px]">
@@ -17,7 +25,13 @@ const JoinUs = () => {
             transform the way you handle DeFi transactions!
           </p>
         </div>
-        <div>form</div>
+        <CButton
+          color="RoyalPurple"
+          content="Launch app"
+          onClick={() => {
+            router.push(ExternalPages.DASHBOARD);
+          }}
+        />
       </div>
       <div>
         <Image src={JoinDancing} alt="icon" className="w-[698px] h-[697px]" />
