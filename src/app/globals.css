@@ -21,3 +21,13 @@ body {
   font-family: 'Aeonik';
   src: url('../../public/font/Aeonik-Regular.ttf');
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #75eeff;
+}
