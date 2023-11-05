@@ -5,7 +5,7 @@ export type CButtonColorType = 'MidnightBlue' | 'RoyalPurple';
 interface CButtonProps {
   color?: CButtonColorType;
   content: string;
-  onClick: () => void;
+  onClick: (event: any) => void;
   type?: 'button' | 'submit' | 'reset' | undefined;
 }
 
@@ -14,8 +14,10 @@ const CButton = ({ color, content, onClick, type }: CButtonProps) => {
     <button
       type={type}
       className={`${
-        color === 'MidnightBlue' ? 'bg-MidnightBlue' : 'bg-RoyalPurple'
-      } px-[26px] py-3 text-white text-xl rounded-xl`}
+        color === 'MidnightBlue'
+          ? 'bg-MidnightBlue hover:bg-RoyalPurple'
+          : 'bg-RoyalPurple hover:bg-MidnightBlue'
+      } px-[26px] py-3 text-white text-xl rounded-xl transition-all duration-500`}
       onClick={onClick}
     >
       {content}

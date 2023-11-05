@@ -18,7 +18,8 @@ const JoinUs = () => {
     setValue(event.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     fetch(ExternalPages.FLUXITY_API + '/subscribe', {
       method: 'POST',
       body: JSON.stringify({
@@ -31,13 +32,13 @@ const JoinUs = () => {
   };
 
   return (
-    <div className="flex justify-center items-center gap-10 w-full">
-      <div className=" pl-[151px] py-[180px]">
+    <div className="flex xxl:justify-center justify-between items-center xxl:gap-10 gap-1 w-full">
+      <div className="pl-[151px] py-[180px]">
         <div className="text-MidnightBlue mb-10">
-          <h3 className="font-medium text-[56px] tracking-[0] leading-[73.4px] mb-6">
+          <h3 className="font-medium xxl:text-[56px] text-[48px] tracking-[0] leading-[73.4px] mb-6">
             Join Fluxity Today
           </h3>
-          <p className="text-2xl xxl:w-[550px]">
+          <p className="xxl:text-2xl text-xl xxl:w-[550px] w-1/2">
             Ready to step into the future of DeFi? Join Fluxity today and experience the power of
             real-time token streaming. Sign up now and transform the way you handle DeFi
             transactions!
@@ -55,8 +56,8 @@ const JoinUs = () => {
           </div>
         </form>
       </div>
-      <div>
-        <Image src={JoinDancing} alt="icon" className="w-[698px] h-[697px] select-none" />
+      <div className="">
+        <Image src={JoinDancing} alt="icon" className="select-none" />
       </div>
     </div>
   );

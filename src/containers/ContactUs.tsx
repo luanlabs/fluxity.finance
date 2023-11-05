@@ -14,27 +14,19 @@ const ContactUs = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-WhiteSmoke pl-[153px] pr-[333px] pt-[38px] pb-[66px] gap-[620px] flex justify-center text-MidnightBlue font-medium">
+    <div className="relative bg-WhiteSmoke  pl-[153px] pr-[333px] pt-[38px] pb-[66px] gap-[620px] flex justify-center text-MidnightBlue font-medium">
       <div>
-        <Image src={logo} alt="Fluxity" className="select-none" />
+        <Image src={logo} alt="Fluxity" className="select-none" width={190} height={40} />
       </div>
       <div>
-        <span className="text-2xl">Get in touch</span>
-        <div className="flex flex-row gap-4 mt-8">
+        <span className="text-2xl whitespace-nowrap">Get in touch</span>
+        <div className="flex flex-row gap-4 mt-8 ">
           <Link href={ExternalPages.GITHUB} target="blank">
-            <Image
-              src={github}
-              alt="Fluxity"
-              className="select-none cursor-pointer"
-            />
+            <Image src={github} alt="Fluxity" className="select-none cursor-pointer" />
           </Link>
 
           <Link href={ExternalPages.DISCORD} target="blank">
-            <Image
-              src={discord}
-              alt="Fluxity"
-              className="select-none cursor-pointer"
-            />
+            <Image src={discord} alt="Fluxity" className="select-none cursor-pointer" />
           </Link>
         </div>
       </div>
