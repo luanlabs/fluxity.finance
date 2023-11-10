@@ -2,12 +2,15 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className="bg-MidnightBlue flex justify-center whitespace-nowrap text-white text-base gap-[550px] pt-[26px] pb-[22px] pl-[151px] pr-[347px]">
+    <footer
+      className="bg-MidnightBlue flex xxl:justify-center justify-between whitespace-nowrap text-white text-base 
+    xxl:gap-[550px] pt-[26px] pb-[22px] pl-[140px] xxl:pr-[347px] pr-[200px]"
+    >
       <p>
         Remember, with Fluxity, the future of <br /> DeFi is at your fingertips.
       </p>
       <p>© 2023 - Fluxity</p>
-    </div>
+    </footer>
   );
 };
 

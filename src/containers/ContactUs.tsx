@@ -1,22 +1,19 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 import github from 'public/images/github.svg';
 import discord from 'public/images/discord.svg';
 import logo from 'public/images/fluxityTypography.svg';
 import { ExternalPages } from '@/constants/externalPages';
-import Link from 'next/link';
 
 const ContactUs = () => {
-  const router = useRouter();
-
   return (
-    <div className="relative bg-WhiteSmoke  pl-[153px] pr-[333px] pt-[38px] pb-[66px] gap-[620px] flex justify-center text-MidnightBlue font-medium">
+    <div className="relative bg-WhiteSmoke pl-[153px] pr-[333px] pt-[38px] pb-[66px] gap-[620px] flex xxl:justify-center justify-between text-MidnightBlue font-medium">
       <div>
-        <Image src={logo} alt="Fluxity" className="select-none" width={190} height={40} />
+        <Image src={logo} alt="Fluxity" className="select-none max-w-[190px] max-h-10" />
       </div>
       <div>
         <span className="text-2xl whitespace-nowrap">Get in touch</span>

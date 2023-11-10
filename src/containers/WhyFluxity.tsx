@@ -2,7 +2,10 @@ import React from 'react';
 
 const WhyFluxity = () => {
   return (
-    <div className="bg-MidnightBlue text-white flex xxl:justify-center justify-between xxl:gap-[260px] gap:[100px] pt-[115px] pb-[135px] pr-[147px] pl-[160px]">
+    <div
+      className="bg-MidnightBlue text-white flex xxl:justify-center justify-between xxl:gap-[260px] gap:[100px] pt-[115px]
+     pb-[135px] pr-[147px] pl-[160px]"
+    >
       <div className="xxl:text-[56px] text-[48px] leading-[73.4px] items-start whitespace-nowrap">
         Why Choose
         <br /> Fluxity?
