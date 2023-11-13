@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import logo from 'public/images/fluxityTypography.svg';
 import Link from 'next/link';
-import CButton from '@/components/Cbutton';
+import CButton from '@/components/CButton';
 import { ExternalPages } from '@/constants/externalPages';
 
 const Header = () => {

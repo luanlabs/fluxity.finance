@@ -1,28 +1,31 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import calculateTimeRemaining from '../../utils/countDown';
 
 interface CountdownItemProps {
   value: number;
   label: string;
 }
-interface CcountDownProps {
+type CCountDownProps = {
   targetDate: string | number | Date;
-}
+};
 
-const CcountDown: React.FC<CcountDownProps> = ({ targetDate }) => {
+const CCountDown = ({ targetDate }: CCountDownProps) => {
   const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining(targetDate));
-
   useEffect(() => {
-    const newTimeRemaining = calculateTimeRemaining(targetDate);
-    setTimeRemaining(newTimeRemaining);
+    setInterval(() => {
+      setTimeRemaining(calculateTimeRemaining(targetDate));
+    }, 1000);
   }, [targetDate]);
 
   const CountdownItem = ({ value, label }: CountdownItemProps) => (
-    <div className="flex flex-col items-center w-[90px] xxl:h-[106px] h-[90px] border-black border rounded-xl text-MidnightBlue">
-      <span className="xxl:text-[42px] text-[36px]">{value}</span>
-      <span className="xxl:text-base text-[14px]">{label}</span>
+    <div
+      className="flex flex-col items-center xxl:w-[90px] xxl:h-[106px] w-[65px] h-[65px]
+     border-MidnightBlue border-2 rounded-xl text-MidnightBlue"
+    >
+      <span className="xxl:text-[42px] text-[24px]">{value}</span>
+      <span className="xxl:text-base text-[12px]">{label}</span>
     </div>
   );
 
@@ -36,4 +39,4 @@ const CcountDown: React.FC<CcountDownProps> = ({ targetDate }) => {
   );
 };
 
-export default CcountDown;
+export default CCountDown;

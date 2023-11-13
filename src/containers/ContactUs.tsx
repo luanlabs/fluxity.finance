@@ -19,11 +19,11 @@ const ContactUs = () => {
         <span className="text-2xl whitespace-nowrap">Get in touch</span>
         <div className="flex flex-row gap-4 mt-8 ">
           <Link href={ExternalPages.GITHUB} target="blank">
-            <Image src={github} alt="Fluxity" className="select-none cursor-pointer" />
+            <Image src={github} alt="Fluxity" className="select-none" />
           </Link>
 
           <Link href={ExternalPages.DISCORD} target="blank">
-            <Image src={discord} alt="Fluxity" className="select-none cursor-pointer" />
+            <Image src={discord} alt="Fluxity" className="select-none" />
           </Link>
         </div>
       </div>

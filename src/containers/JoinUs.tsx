@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-import CInput from '../components/Cinput';
-import CButton from '../components/Cbutton';
+import CInput from '../components/CInput';
+import CButton from '../components/CButton';
 import { ExternalPages } from '../constants/externalPages';
 
 import fetch from '../utils/request';

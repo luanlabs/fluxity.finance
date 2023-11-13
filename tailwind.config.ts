@@ -24,10 +24,10 @@ const config: Config = {
         xxl: { min: '1536px' },
       },
       animation: {
-        movingLine: 'movingLine 8s linear infinite',
-        movingLineDelay1: 'movingLine 9s linear infinite',
-        movingLineDelay2: 'movingLine 10s linear infinite',
-        movingLineDelay3: 'movingLine 7s linear infinite',
+        movingLine: 'movingLine 6.5s linear infinite',
+        movingLineDelay1: 'movingLine 7s linear infinite',
+        movingLineDelay2: 'movingLine 9s linear infinite',
+        movingLineDelay3: 'movingLine 7.5s linear infinite',
       },
       keyframes: {
         movingLine: {
@@ -37,9 +37,9 @@ const config: Config = {
             transform: 'translateX(-100%)',
           },
           '100%': {
-            '-moz-transform': 'translateX(100%)',
-            '-webkit-transform': 'translateX(100%)',
-            transform: 'translateX(100%)',
+            '-moz-transform': 'translateX(110%)',
+            '-webkit-transform': 'translateX(110%)',
+            transform: 'translateX(110%)',
           },
         },
       },

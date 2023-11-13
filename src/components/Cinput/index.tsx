@@ -3,18 +3,11 @@ import Image from 'next/image';
 
 interface CInputProps {
   icon?: string;
-  label?: string;
   placeholder?: string;
   className?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  details?: string;
   error?: boolean;
   errorMsg?: string;
-  clearInput?: boolean;
-  clearInputClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  paste?: boolean;
-  clipboardText?: string;
-  handlePaste?: (event: React.MouseEventHandler<HTMLDivElement>) => void;
   border?: boolean;
   value?: string | number | any;
   disabled?: boolean;
@@ -24,16 +17,10 @@ const CInput = ({
   icon,
   placeholder,
   className,
-  label,
-  details,
   error,
   errorMsg,
-  clearInput,
-  clearInputClick,
   onChange,
-  paste,
   border,
-  handlePaste,
   value,
   disabled,
   ...props

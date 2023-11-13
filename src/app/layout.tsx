@@ -3,8 +3,13 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 
 export const metadata: Metadata = {
-  title: 'Fluxity.finance',
-  description: 'A money streaming service',
+  title: 'Fluxity',
+  description:
+    'Fluxity is a token streaming platform unlocking new digital payment possibilities on the Stellar network.',
+  keywords:
+    'Fluxity, Stellar, token streaming, cryptocurrency, blockchain, finance, digital payments, smart contracts',
+  applicationName: 'Fluxity',
+  creator: 'Fluxity Team, fluxity.finance@gmail.com',
 };
 
 const myFont = localFont({
@@ -19,9 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={myFont.className}>
       <head>
-        <title>Fluxity.finance</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="keywords" content="Fluxity, stream, stellar" />
       </head>
       <body className="overflow-x-hidden">{children}</body>
     </html>
