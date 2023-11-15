@@ -27,7 +27,7 @@ const Header = () => {
           target="blank"
           className="text-[18px] hover:text-MidnightBlue"
         >
-          White Paper
+          Whitepaper
         </Link>
         <CButton color="RoyalPurple" content="Launch App" onClick={handleRedirect} />
       </div>

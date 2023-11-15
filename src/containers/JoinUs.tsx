@@ -3,32 +3,44 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
+import toast from '../components/CToast';
 import CInput from '../components/CInput';
 import CButton from '../components/CButton';
 import { ExternalPages } from '../constants/externalPages';
 
 import fetch from '../utils/request';
 
-import JoinDancing from 'public/images/joinDancing.png';
+import joinDancing from 'public/images/joinDancing.png';
+
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /.+\@.+\..+/;
+  return emailRegex.test(email);
+};
 
 const JoinUs = () => {
-  const [value, setValue] = useState('');
-
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
-
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const email = event.target.input.value;
+    if (!validateEmail(email)) {
+      toast('error', 'Enter a valid email address');
+      return;
+    }
+
     fetch(ExternalPages.FLUXITY_API + '/subscribe', {
       method: 'POST',
       body: JSON.stringify({
-        email: value,
+        email: email,
       }),
       headers: {
         'Content-Type': 'application/json',
       },
-    });
+    })
+      .then(() => {
+        toast('success', 'Subscription successful!');
+      })
+      .catch((error) => {
+        toast('error', error.data.message + '.');
+      });
   };
 
   return (
@@ -45,18 +57,13 @@ const JoinUs = () => {
           </p>
         </div>
         <form onSubmit={handleSubmit} className="inline-flex gap-2 w-full">
-          <CInput placeholder="Enter your email" onChange={onChange} />
-          <CButton
-            type="submit"
-            color="RoyalPurple"
-            content="Join Wait list"
-            onClick={handleSubmit}
-          />
+          <CInput placeholder="Enter your email" name="input" type="email" />
+          <CButton type="submit" color="RoyalPurple" content="Join Wait list" />
         </form>
       </div>
       <div className="w-[690px] h-[690px] z-10">
         <Image
-          src={JoinDancing}
+          src={joinDancing}
           alt="icon"
           className="select-none"
           fill

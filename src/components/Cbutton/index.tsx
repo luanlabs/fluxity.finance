@@ -5,7 +5,7 @@ export type CButtonColorType = 'MidnightBlue' | 'RoyalPurple';
 interface CButtonProps {
   color?: CButtonColorType;
   content: string;
-  onClick: (event: any) => void;
+  onClick?: (event: any) => void;
   type?: 'button' | 'submit' | 'reset' | undefined;
 }
 

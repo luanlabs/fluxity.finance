@@ -11,9 +11,12 @@ interface CInputProps {
   border?: boolean;
   value?: string | number | any;
   disabled?: boolean;
+  name: string;
+  type?: React.HTMLInputTypeAttribute | undefined;
 }
 
 const CInput = ({
+  name,
   icon,
   placeholder,
   className,
@@ -23,6 +26,7 @@ const CInput = ({
   border,
   value,
   disabled,
+  type,
   ...props
 }: CInputProps) => {
   return (
@@ -46,7 +50,9 @@ const CInput = ({
           `}
           value={value}
           disabled={disabled}
+          name={name}
           {...props}
+          type={type}
         />
 
         <div className="h-[20px] absolute mt-[6px] ml-1">
