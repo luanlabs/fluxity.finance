@@ -7,21 +7,18 @@ import toast from '../components/CToast';
 import CInput from '../components/CInput';
 import CButton from '../components/CButton';
 import { ExternalPages } from '../constants/externalPages';
+import { validateEmail } from '../utils/validateEmail';
 
 import fetch from '../utils/request';
 
 import joinDancing from 'public/images/joinDancing.png';
 
-const validateEmail = (email: string): boolean => {
-  const emailRegex = /.+\@.+\..+/;
-  return emailRegex.test(email);
-};
-
 const JoinUs = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const email = event.target.input.value;
-    if (!validateEmail(email)) {
+    const value = event.target.input.value;
+
+    if (!validateEmail(value)) {
       toast('error', 'Enter a valid email address');
       return;
     }
@@ -29,7 +26,7 @@ const JoinUs = () => {
     fetch(ExternalPages.FLUXITY_API + '/subscribe', {
       method: 'POST',
       body: JSON.stringify({
-        email: email,
+        email: value,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -39,7 +36,11 @@ const JoinUs = () => {
         toast('success', 'Subscription successful!');
       })
       .catch((error) => {
-        toast('error', error.data.message + '.');
+        if (error?.data?.message) {
+          toast('error', error.data.message + '.');
+          return;
+        }
+        toast('error', 'Error, try again later.');
       });
   };
 
