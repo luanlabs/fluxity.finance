@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
+    './src/containers/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
@@ -21,6 +22,26 @@ const config: Config = {
         lg: { min: '1024px', max: '1279px' },
         xl: { min: '1280px', max: '1535px' },
         xxl: { min: '1536px' },
+      },
+      animation: {
+        movingLine: 'movingLine 6.5s linear infinite',
+        movingLineDelay1: 'movingLine 7s linear infinite',
+        movingLineDelay2: 'movingLine 9s linear infinite',
+        movingLineDelay3: 'movingLine 7.5s linear infinite',
+      },
+      keyframes: {
+        movingLine: {
+          '0%': {
+            '-moz-transform': 'translateX(-100%)',
+            '-webkit-transform': 'translateX(-100%)',
+            transform: 'translateX(-100%)',
+          },
+          '100%': {
+            '-moz-transform': 'translateX(110%)',
+            '-webkit-transform': 'translateX(110%)',
+            transform: 'translateX(110%)',
+          },
+        },
       },
     },
   },
