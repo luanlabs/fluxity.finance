@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import calculateTimeRemaining from '../../utils/countDown';
-import CCountDownItem from './CCountDownItem';
+
+import CountDownItem from './CountDownItem';
 
 type CCountDownProps = {
   targetDate: string | number | Date;
@@ -18,10 +19,10 @@ const CCountDown = ({ targetDate }: CCountDownProps) => {
 
   return (
     <div className="flex justify-center items-center gap-2">
-      <CCountDownItem value={timeRemaining.days} label="DAYS" />
-      <CCountDownItem value={timeRemaining.hours} label="HOURS" />
-      <CCountDownItem value={timeRemaining.minutes} label="MINUTES" />
-      <CCountDownItem value={timeRemaining.seconds} label="SECONDS" />
+      <CountDownItem value={timeRemaining.days} label="DAYS" />
+      <CountDownItem value={timeRemaining.hours} label="HOURS" />
+      <CountDownItem value={timeRemaining.minutes} label="MINUTES" />
+      <CountDownItem value={timeRemaining.seconds} label="SECONDS" />
     </div>
   );
 };
