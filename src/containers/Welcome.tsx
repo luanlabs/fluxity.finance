@@ -5,7 +5,8 @@ import line1 from 'public/images/line1.png';
 import line2 from 'public/images/line2.png';
 import line3 from 'public/images/line3.png';
 import line4 from 'public/images/line4.png';
-import CCountDown from '@/components/CCountDown';
+
+import CCountDown from '../components/CCountDown';
 
 const Welcome = () => {
   const targetDate = new Date('12/20/2023').getTime();
