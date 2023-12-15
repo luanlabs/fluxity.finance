@@ -45,13 +45,13 @@ const JoinUs = () => {
   };
 
   return (
-    <div className="relative z-30 flex xxl:justify-center justify-between items-center xxl:gap-10 gap-1 w-full">
-      <div className="pl-[160px] py-[180px] z-20">
+    <div className="relative z-30 flex xxl:justify-center justify-between sm:justify-center items-center xxl:gap-10 gap-1 w-full">
+      <div className="pl-[160px] sm:pl-[50px] py-[180px] z-20">
         <div className="text-MidnightBlue mb-10">
-          <h3 className="font-medium xxl:text-[56px] text-[48px] tracking-[0] leading-[73.4px] mb-6">
+          <h3 className="font-medium xxl:text-[56px] text-[48px] sm:text-[45px] tracking-[0] leading-[73.4px] mb-6">
             Join Fluxity Today
           </h3>
-          <p className="xxl:text-2xl text-xl xxl:w-[540px] w-1/2">
+          <p className="xxl:text-2xl text-xl xxl:w-[540px] w-1/2 sm:w-[300px]">
             Ready to step into the future of DeFi? Join Fluxity today and experience the power of
             real-time token streaming. Sign up now and transform the way you handle DeFi
             transactions!
@@ -59,7 +59,12 @@ const JoinUs = () => {
         </div>
         <form onSubmit={handleSubmit} className="inline-flex gap-2 w-full">
           <CInput placeholder="Enter your email" name="input" type="email" />
-          <CButton type="submit" color="RoyalPurple" content="Join Wait list" />
+          <CButton
+            type="submit"
+            color="RoyalPurple"
+            className="sm:text-sm sm:px-0 sm:w-[40%]"
+            content="Join Wait list"
+          />
         </form>
       </div>
       <div className="w-[690px] h-[690px] z-10">
