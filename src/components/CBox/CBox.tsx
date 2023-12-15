@@ -1,6 +1,6 @@
 interface CBoxProps {
   bg: string;
-  title: string;
+  title: string | JSX.Element;
   content: string;
 }
 

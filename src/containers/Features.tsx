@@ -3,6 +3,12 @@
 import CBox from '@/components/CBox/CBox';
 
 const Features = () => {
+  const supportTitle = (
+    <p>
+      24/7 <br /> Support
+    </p>
+  );
+
   return (
     <div className="w-full m-auto flex flex-col justify-center items-center pb-[89px] pt-[72px]">
       <div className="flex flex-col m-auto pr-[280px] sm:pr-0 sm:text-2xl text-[44px] landing-[49px]  text-left items-center">
@@ -40,7 +46,7 @@ const Features = () => {
 
           <CBox
             bg="#75EEFF"
-            title="24/7 Support"
+            title={supportTitle}
             content="We have a dedicated team of customer support specialists always ready to assist you."
           />
         </div>
