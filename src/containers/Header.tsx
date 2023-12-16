@@ -17,19 +17,24 @@ const Header = () => {
   };
 
   return (
-    <header className="flex xxl:justify-center xxl:gap-[650px] justify-between items-center bg-BabyBlue px-[150px] py-[27px]">
+    <header className="flex xxl:justify-center xxl:gap-[650px] justify-between items-center bg-BabyBlue px-[150px] sm:px-2 py-[27px]">
       <div>
-        <Image src={logo} alt="Fluxity" className="select-none max-w-[190px] max-h-10" />
+        <Image src={logo} alt="Fluxity" className="select-none max-w-[190px] max-h-10 sm:max-h-8" />
       </div>
-      <div className="flex items-center gap-6">
+      <div className="flex justify-center items-center gap-6 sm:gap-4">
         <Link
           href={ExternalPages.WHITE_PAPER}
           target="blank"
-          className="text-[18px] hover:text-MidnightBlue"
+          className="text-[18px] sm:text-base hover:text-MidnightBlue"
         >
           Whitepaper
         </Link>
-        <CButton color="RoyalPurple" content="Launch App" onClick={handleRedirect} />
+        <CButton
+          color="RoyalPurple"
+          content="Launch App"
+          className="sm:h-10 sm:px-3 sm:text-xs"
+          onClick={handleRedirect}
+        />
       </div>
     </header>
   );
