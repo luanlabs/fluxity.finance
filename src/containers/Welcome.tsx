@@ -18,7 +18,7 @@ const Welcome = () => {
         Unlock Financial Horizons with Token Streaming
       </p>
       <CCountDown targetDate={targetDate} />
-      <picture className="xxl:space-y-12 space-y-8 xxl:mt-14 mt-6 ">
+      <picture className="xxl:space-y-12 space-y-8 xxl:mt-14 mt-6 overflow-hidden">
         <Image src={line1} alt="moving lines" className="animate-movingLine" />
         <Image src={line2} alt="moving lines" className="animate-movingLineDelay1" />
         <Image src={line3} alt="moving lines" className="animate-movingLineDelay2" />
