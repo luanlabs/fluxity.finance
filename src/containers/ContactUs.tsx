@@ -11,7 +11,7 @@ import { ExternalPages } from '@/constants/externalPages';
 
 const ContactUs = () => {
   return (
-    <div className="relative bg-WhiteSmoke pl-[153px] sm:pl-8 pr-[333px] sm:pr-0 pt-[38px] pb-[66px] gap-[620px] sm:gap-5 flex sm:flex-col xxl:justify-center justify-between text-MidnightBlue font-medium">
+    <div className="relative bg-WhiteSmoke pl-[153px] sm:pl-8 pr-[333px] sm:pr-0 pt-[38px] pb-[66px] gap-[620px] md:gap-[200px] sm:gap-5 flex sm:flex-col xxl:justify-center justify-between text-MidnightBlue font-medium">
       <div>
         <Image src={logo} alt="Fluxity" className="select-none max-w-[190px] max-h-10" />
       </div>

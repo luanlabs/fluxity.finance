@@ -17,11 +17,15 @@ const Header = () => {
   };
 
   return (
-    <header className="flex xxl:justify-center xxl:gap-[650px] justify-between items-center bg-BabyBlue px-[150px] sm:px-2 py-[27px]">
+    <header className="flex xxl:justify-center xxl:gap-[650px] justify-between items-center bg-BabyBlue px-[150px] md:px-10 sm:px-2 py-[27px]">
       <div>
-        <Image src={logo} alt="Fluxity" className="select-none max-w-[190px] max-h-10 sm:max-h-8" />
+        <Image
+          src={logo}
+          alt="Fluxity"
+          className="select-none max-w-[190px] max-h-10 sm:ml-8 md:ml-2"
+        />
       </div>
-      <div className="flex justify-center items-center gap-6 sm:gap-4">
+      <div className="flex justify-center items-center gap-6 sm:gap-4 sm:hidden md:hidden">
         <Link
           href={ExternalPages.WHITE_PAPER}
           target="blank"
