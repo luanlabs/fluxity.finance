@@ -36,7 +36,7 @@ const Header = () => {
         <CButton
           color="RoyalPurple"
           content="Launch App"
-          className="sm:h-10 sm:px-3 sm:text-xs"
+          className="sm:h-10 sm:px-3 sm:text-xs !h-12"
           onClick={handleRedirect}
         />
       </div>

@@ -45,37 +45,39 @@ const JoinUs = () => {
   };
 
   return (
-    <div className="relative z-30 sm:px-6 flex xxl:justify-center justify-between sm:justify-center items-center xxl:gap-10 sm:gap-0 gap-1 w-full">
-      <div className="pl-[160px] sm:pl-0 py-[180px] sm:py-[80px] z-20 w-full">
-        <div className="text-MidnightBlue mb-10  w-full">
-          <h3 className="font-medium xxl:text-[56px] text-[48px] sm:text-[45px] tracking-[0] leading-[73.4px] mb-6">
-            Join Fluxity Today
-          </h3>
-          <p className="xxl:text-2xl text-xl xxl:w-[540px] w-1/2 sm:w-full md:w-full">
-            Ready to step into the future of DeFi? Join Fluxity today and experience the power of
-            real-time token streaming. Sign up now and transform the way you handle DeFi
-            transactions!
-          </p>
+    <div className="z-30 flex justify-center h-[700px] items-center gap-10 sm:gap-0 w-full px-7">
+      <div className="relative flex justify-between sm:justify-center items-center h-[700px] gap-[750px] lg:gap-[500px] md:gap-0 sm:gap-0 sm:w-full">
+        <div className="sm:pl-0 sm:py-[80px] z-20">
+          <div className="text-MidnightBlue mb-10">
+            <h3 className="font-medium xxl:text-[56px] text-[48px] sm:text-[45px] tracking-[0] leading-[73.4px] mb-6">
+              Join Fluxity Today
+            </h3>
+            <p className="xxl:text-2xl text-xl w-[550px] sm:w-full md:w-full">
+              Ready to explore new financial horizons? Join our waitlist to be the first to know
+              about our news and updates and experience the next generation of payment possibilities
+              with Fluxity!
+            </p>
+          </div>
+          <form onSubmit={handleSubmit} className="flex sm:flex-col gap-2 w-full">
+            <CInput placeholder="Enter your email" name="input" type="email" />
+            <CButton
+              type="submit"
+              color="RoyalPurple"
+              className="sm:text-sm sm:px-0 h-[76px]"
+              content="Join Wait list"
+            />
+          </form>
         </div>
-        <form onSubmit={handleSubmit} className="flex sm:flex-col gap-2 w-full">
-          <CInput placeholder="Enter your email" name="input" type="email" />
-          <CButton
-            type="submit"
-            color="RoyalPurple"
-            className="sm:text-sm sm:px-0"
-            content="Join Wait list"
+        <div className="z-10 sm:hidden bg-[#909000] h-[700px] md:h-[500px] lg:h-[300px] flex items-center ">
+          <Image
+            src={joinDancing}
+            alt="icon"
+            className="select-none"
+            fill
+            objectFit="contain"
+            objectPosition="right"
           />
-        </form>
-      </div>
-      <div className="w-[690px] h-[690px] z-10 sm:hidden">
-        <Image
-          src={joinDancing}
-          alt="icon"
-          className="select-none"
-          fill
-          objectFit="contain"
-          objectPosition="right"
-        />
+        </div>
       </div>
     </div>
   );

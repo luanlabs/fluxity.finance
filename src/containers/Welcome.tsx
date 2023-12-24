@@ -30,18 +30,18 @@ const Welcome = () => {
       </p>
       {/* <CCountDown targetDate={targetDate} /> */}
 
-      <div className="flex justify-center items-center gap-6 sm:gap-4 xl:hidden xxl:hidden lg:hidden">
+      <div className="flex justify-center items-center gap-6 sm:gap-4 xl:hidden xxl:hidden lg:hidden mt-4">
         <Link
           href={ExternalPages.WHITE_PAPER}
           target="blank"
-          className="text-[18px] sm:text-base hover:text-MidnightBlue"
+          className="text-[18px] md:text-xl sm:text-base hover:text-MidnightBlue"
         >
           Whitepaper
         </Link>
         <CButton
           color="RoyalPurple"
           content="Launch App"
-          className="sm:h-10 sm:px-3 sm:text-xs"
+          className="sm:!h-12 sm:px-5 sm:text-xs md:text-xl !h-[60px]"
           onClick={handleRedirect}
         />
       </div>
