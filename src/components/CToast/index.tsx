@@ -11,7 +11,8 @@ const toastStyle = {
     color: '#fff',
     backgroundColor: '#050142',
     width: 'auto',
-    minWidth: '550px',
+    minWidth: '200px',
+    maxWidth: '550px',
   },
   duration: 2000,
 };
