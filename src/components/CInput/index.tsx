@@ -43,7 +43,7 @@ const CInput = ({
           placeholder={placeholder}
           autoComplete="off"
           className={`${icon ? 'px-12' : 'px-4'}
-           self-stretch rounded-xl placeholder-mutedBlue text-midnightBlue text-base w-full xxl:h-14 h-12 p-4 bg-neutral-100 justify-start items-center inline-flex outline-none border
+           self-stretch rounded-xl placeholder-mutedBlue text-midnightBlue text-[18px] sm:text-base sm:w-full w-[360pxs] sm:h-12 h-[76px] p-4 bg-neutral-100 justify-start items-center inline-flex outline-none border
            ${border ? 'focus:border-darkBlue' : 'border-transparent'}  
            ${error && 'border !border-error'}
            ${disabled && 'cursor-not-allowed !select-none text-mutedBlue'}

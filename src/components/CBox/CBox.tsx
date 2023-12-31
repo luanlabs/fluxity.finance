@@ -7,7 +7,7 @@ interface CBoxProps {
 const CBox = ({ bg, title, content }: CBoxProps) => {
   return (
     <div
-      className="text-RoyalPurple flex flex-col justify-center h-[306px] w-[363px] px-[22px] rounded-[14px]"
+      className="text-RoyalPurple flex flex-col justify-center h-[306px] w-[363px] sm:h-[270px] sm:w-[90%] md:w-[50%] px-[22px] rounded-[14px]"
       style={{ backgroundColor: bg }}
     >
       <h2 className="text-[44px] mb-[18px] leading-[49px]">{title}</h2>
