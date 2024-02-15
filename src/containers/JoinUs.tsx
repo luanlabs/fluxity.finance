@@ -46,7 +46,7 @@ const JoinUs = () => {
 
   return (
     <div className="z-30 flex justify-center h-[700px] items-center gap-10 sm:gap-0 w-full px-7">
-      <div className="relative flex justify-between sm:justify-center items-center h-[700px] gap-[750px] lg:gap-[300px] md:gap-0 sm:gap-0 sm:w-full">
+      <div className="relative flex justify-between sm:justify-center items-center h-[700px] gap-[600px] lg:gap-[300px] md:gap-0 sm:gap-0 sm:w-full">
         <div className="sm:pl-0 sm:py-[80px] z-20">
           <div className="text-MidnightBlue mb-10">
             <h3 className="font-medium xxl:text-[56px] text-[48px] sm:text-[45px] tracking-[0] leading-[73.4px] mb-6">

@@ -19,8 +19,8 @@ const config: Config = {
       screens: {
         sm: { max: '767px' },
         md: { min: '768px', max: '1023px' },
-        lg: { min: '1024px', max: '1279px' },
-        xl: { min: '1280px', max: '1535px' },
+        lg: { min: '1024px', max: '1280px' },
+        xl: { min: '1281px', max: '1535px' },
         xxl: { min: '1536px' },
       },
       animation: {
