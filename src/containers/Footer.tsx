@@ -11,7 +11,7 @@ const Footer = () => {
       <p>
         Remember, with Fluxity, the future of <br /> DeFi is at your fingertips.
       </p>
-      <p className="sm:mt-4">© 2023 - Fluxity</p>
+      <p className="sm:mt-4">© 2024 - Fluxity</p>
     </footer>
   );
 };
