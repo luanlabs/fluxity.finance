@@ -20,6 +20,7 @@ const config: Config = {
         sm: { max: '767px' },
         md: { min: '768px', max: '1023px' },
         lg: { min: '1024px', max: '1280px' },
+        mobile: { max: '1023px' },
         xl: { min: '1281px', max: '1535px' },
         xxl: { min: '1536px' },
       },
