@@ -25,7 +25,7 @@ const Features = () => {
       </div>
 
       <section className="mt-[96px] sm:mt-10 pl-[313px] xxl:pl-[313px] xl:pl-[100px] lg:pl-12 md:pl-0 md: sm:pl-0 m-auto flex flex-col items-center justify-center md:flex-col">
-        <div className="flex sm:flex-col sm:items-center sm:mr-0 gap-4 mr-[765px] md:mr-0 md:px-8">
+        <div className="flex sm:flex-col sm:items-center sm:mr-0 gap-4 mr-[762px] md:mr-0 md:px-8">
           <CBox
             bg="#FCFF56"
             title="Custom Payments"
