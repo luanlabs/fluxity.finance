@@ -22,7 +22,7 @@ const ContactUs = () => {
           <div className="flex gap-4 mt-8">
             <p>
               Questions? Reach out to us at
-              <Link href="support@fluxity.finance" target="blank" className="underline">
+              <Link href="mailto:support@fluxity.finance" target="blank" className="underline">
                 <br />
                 support@fluxity.finance
               </Link>
