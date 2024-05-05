@@ -4,7 +4,7 @@ const WhyFluxity = () => {
   return (
     <div
       className="bg-MidnightBlue text-white flex sm:flex-col xxl:justify-center justify-between sm:justify-center sm:items-center xxl:gap-[260px] gap:[100px] sm:gap-0 pt-[115px]
-     pb-[135px] pr-[147px] pl-[160px] md:pr-0 md:pl-0 sm:pr-0 sm:pl-0 md:!px-[50px] md:gap-0"
+     pb-[135px] pr-[147px] pl-[160px] xl:pl-[100px] md:pr-0 md:pl-0 sm:pr-0 sm:pl-0 md:!px-[50px] md:gap-0"
     >
       <div className="xxl:text-[56px] text-[48px] sm:w-full sm:px-6 leading-[73.4px] items-start whitespace-nowrap">
         Why Choose
