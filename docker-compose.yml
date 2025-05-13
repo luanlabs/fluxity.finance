@@ -1,8 +1,8 @@
 version: '3'
 services:
   fluxity-finance:
-    image: fluxity-finance:latest
+    build: .
     pull_policy: never
-    restart: on-failure
+    restart: unless-stopped
     ports:
       - '3002:3002'
