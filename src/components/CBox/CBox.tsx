@@ -1,6 +1,8 @@
+import type { ReactNode } from 'react';
+
 interface CBoxProps {
   bg: string;
-  title: string | JSX.Element;
+  title: ReactNode;
   content: string;
 }
 

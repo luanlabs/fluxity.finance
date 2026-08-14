@@ -1,0 +1,12 @@
+# Generated / vendored — not ours to format
+.next
+out
+build
+node_modules
+next-env.d.ts
+package-lock.json
+public
+*.woff
+
+# Managed/reformatted by `next build` — avoid a format tug-of-war
+tsconfig.json

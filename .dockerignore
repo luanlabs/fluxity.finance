@@ -1,0 +1,32 @@
+# Dependencies & build artifacts (rebuilt inside the image)
+node_modules
+.next
+out
+build
+
+# VCS & CI
+.git
+.gitignore
+.github
+
+# Editor / OS noise
+.vscode
+.idea
+.DS_Store
+
+# Logs & caches
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tsbuildinfo
+
+# Docker / docs (not needed at build/runtime)
+Dockerfile
+.dockerignore
+docker-compose.yml
+README.md
+
+# Local env files (never bake secrets into the image)
+.env
+.env.*
+!.env.example

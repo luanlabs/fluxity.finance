@@ -1,11 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: [
-    './src/containers/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       colors: {
@@ -15,6 +11,13 @@ const config: Config = {
         RoyalPurple: '#3A21D4',
         LemonYellow: '#FCFF56',
         LightSkyBlue: '#75EEFF',
+        // Semantic / lowercase aliases referenced by components (CInput, etc.).
+        // Previously undefined, which silently dropped input text, placeholder,
+        // focus-border and error styling.
+        midnightBlue: '#050142',
+        darkBlue: '#050142',
+        mutedBlue: '#9CA3AF',
+        error: '#EF4444',
       },
       screens: {
         sm: { max: '767px' },

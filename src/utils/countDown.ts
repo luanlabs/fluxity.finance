@@ -1,4 +1,11 @@
-const calculateTimeRemaining = (targetDate: string | number | Date) => {
+export interface TimeRemaining {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
+const calculateTimeRemaining = (targetDate: string | number | Date): TimeRemaining => {
   const second = 1000,
     minute = second * 60,
     hour = minute * 60,

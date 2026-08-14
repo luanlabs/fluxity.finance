@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 interface CInputProps {
+  name: string;
   icon?: string;
   placeholder?: string;
   className?: string;
@@ -9,10 +10,9 @@ interface CInputProps {
   error?: boolean;
   errorMsg?: string;
   border?: boolean;
-  value?: string | number | any;
+  value?: string | number;
   disabled?: boolean;
-  name: string;
-  type?: React.HTMLInputTypeAttribute | undefined;
+  type?: React.HTMLInputTypeAttribute;
 }
 
 const CInput = ({
@@ -26,33 +26,32 @@ const CInput = ({
   border,
   value,
   disabled,
-  type,
-  ...props
+  type = 'text',
 }: CInputProps) => {
   return (
     <div className={className}>
       <div className="relative w-full">
         {icon && (
           <div className="absolute bottom-4 left-3.5">
-            <Image src={icon} width={22} height={22} alt="inputIcon" />
+            <Image src={icon} width={22} height={22} alt="" />
           </div>
         )}
 
         <input
+          name={name}
+          type={type}
+          value={value}
           onChange={onChange}
           placeholder={placeholder}
-          autoComplete="off"
-          className={`${icon ? 'px-12' : 'px-4'}
-           self-stretch rounded-xl placeholder-mutedBlue text-midnightBlue text-[18px] sm:text-base sm:w-full w-[360pxs] sm:h-12 h-[76px] p-4 bg-neutral-100 justify-start items-center inline-flex outline-none border
-           ${border ? 'focus:border-darkBlue' : 'border-transparent'}  
-           ${error && 'border !border-error'}
-           ${disabled && 'cursor-not-allowed !select-none text-mutedBlue'}
-          `}
-          value={value}
           disabled={disabled}
-          name={name}
-          {...props}
-          type={type}
+          autoComplete="off"
+          aria-invalid={error || undefined}
+          className={`${icon ? 'px-12' : 'px-4'}
+           self-stretch rounded-xl placeholder-mutedBlue text-midnightBlue text-[18px] sm:text-base sm:w-full w-[360px] sm:h-12 h-[76px] p-4 bg-neutral-100 justify-start items-center inline-flex outline-none border
+           ${border ? 'focus:border-darkBlue' : 'border-transparent'}
+           ${error ? 'border !border-error' : ''}
+           ${disabled ? 'cursor-not-allowed !select-none text-mutedBlue' : ''}
+          `}
         />
 
         <div className="h-[20px] absolute mt-[6px] ml-1">

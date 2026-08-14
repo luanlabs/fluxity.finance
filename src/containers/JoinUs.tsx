@@ -1,47 +1,54 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import Image from 'next/image';
 
-import toast from '../components/CToast';
-import CInput from '../components/CInput';
-import CButton from '../components/CButton';
-import { ExternalPages } from '../constants/externalPages';
-import { validateEmail } from '../utils/validateEmail';
-
-import fetch from '../utils/request';
+import toast from '@/components/CToast';
+import CInput from '@/components/CInput';
+import CButton from '@/components/CButton';
+import { validateEmail } from '@/utils/validateEmail';
+import request, { RequestError } from '@/utils/request';
+import { FLUXITY_API_URL } from '@/constants/env';
 
 import joinDancing from 'public/images/joinDancing.png';
 
 const JoinUs = () => {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const value = event.target.input.value;
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-    if (!validateEmail(value)) {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (isSubmitting) {
+      return;
+    }
+
+    const trimmedEmail = email.trim();
+    if (!validateEmail(trimmedEmail)) {
       toast('error', 'Enter a valid email address');
       return;
     }
 
-    fetch(ExternalPages.FLUXITY_API + '/subscribe', {
-      method: 'POST',
-      body: JSON.stringify({
-        email: value,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(() => {
-        toast('success', 'Subscription successful!');
-      })
-      .catch((error) => {
-        if (error?.data?.message) {
-          toast('error', error.data.message + '.');
-          return;
-        }
-        toast('error', 'Error, try again later.');
+    setIsSubmitting(true);
+    try {
+      await request(`${FLUXITY_API_URL}/subscribe`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: trimmedEmail }),
       });
+      toast('success', 'Subscription successful!');
+      setEmail('');
+    } catch (error) {
+      let message = 'Error, try again later.';
+      if (error instanceof RequestError) {
+        const body = error.data as { message?: string } | null;
+        if (body?.message) {
+          message = `${body.message}.`;
+        }
+      }
+      toast('error', message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -58,24 +65,30 @@ const JoinUs = () => {
               with Fluxity!
             </p>
           </div>
-          <form onSubmit={handleSubmit} className="flex sm:flex-col gap-2 w-full">
-            <CInput placeholder="Enter your email" name="input" type="email" />
+          <form onSubmit={handleSubmit} className="flex sm:flex-col gap-2 w-full" noValidate>
+            <CInput
+              placeholder="Enter your email"
+              name="email"
+              type="email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              disabled={isSubmitting}
+            />
             <CButton
               type="submit"
               color="RoyalPurple"
               className="sm:text-sm sm:px-0 h-[76px]"
-              content="Join Wait list"
+              content={isSubmitting ? 'Joining…' : 'Join Wait list'}
+              disabled={isSubmitting}
             />
           </form>
         </div>
         <div className="z-10 sm:hidden bg-[#909000] h-[700px] md:h-[500px] lg:h-[300px] flex items-center ">
           <Image
             src={joinDancing}
-            alt="icon"
-            className="select-none"
+            alt="Person dancing"
+            className="select-none object-contain object-right"
             fill
-            objectFit="contain"
-            objectPosition="right"
           />
         </div>
       </div>

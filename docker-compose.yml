@@ -1,8 +1,26 @@
-version: '3'
 services:
   fluxity-finance:
-    build: .
-    pull_policy: never
+    build:
+      context: .
+      # Optional: override the API base URL baked into the client bundle.
+      # args:
+      #   NEXT_PUBLIC_FLUXITY_API_URL: https://api.fluxity.finance
+    image: fluxity-finance:latest
+    container_name: fluxity-finance
     restart: unless-stopped
     ports:
       - '3002:3002'
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'node',
+          '-e',
+          "fetch('http://127.0.0.1:3002').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s

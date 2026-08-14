@@ -1,5 +1,3 @@
-'use client';
-
 import CBox from '@/components/CBox/CBox';
 
 const uniqueDesignTitle = (

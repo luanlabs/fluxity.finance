@@ -1,25 +1,21 @@
 'use client';
 
-import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 import logo from 'public/images/fluxityTypography.svg';
-import Link from 'next/link';
 import CButton from '@/components/CButton';
 import { ExternalPages } from '@/constants/externalPages';
 
 const Header = () => {
-  const router = useRouter();
-
   const handleRedirect = () => {
-    router.push(ExternalPages.DASHBOARD);
+    window.location.href = ExternalPages.DASHBOARD;
   };
 
   return (
     <header className="flex xxl:justify-center xxl:gap-[650px] justify-between items-center bg-BabyBlue px-[150px] md:px-10 sm:px-2 py-[27px]">
       <div>
-        <Link href="http://fluxity.finance">
+        <Link href={ExternalPages.WEBSITE}>
           <Image
             src={logo}
             alt="Fluxity"
@@ -31,7 +27,8 @@ const Header = () => {
         <Link
           title="Whitepaper"
           href={ExternalPages.WHITE_PAPER}
-          target="blank"
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-[18px] sm:text-base hover:text-MidnightBlue"
         >
           Whitepaper
@@ -39,12 +36,19 @@ const Header = () => {
         <Link
           title="Documentation"
           href={ExternalPages.DOCUMENTATION}
-          target="blank"
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-[18px] sm:text-base hover:text-MidnightBlue"
         >
           Documentation
         </Link>
-        <Link title="Dashboard" href={ExternalPages.DASHBOARD} target="blank" className="hidden" />
+        <Link
+          title="Dashboard"
+          href={ExternalPages.DASHBOARD}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden"
+        />
         <CButton
           color="RoyalPurple"
           content="Launch App"

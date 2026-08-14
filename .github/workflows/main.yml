@@ -9,21 +9,23 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Build
-        run: |
-          docker build -t fluxity-finance:latest .
+        run: docker build -t fluxity-finance:latest .
 
   Execute:
     name: Execute
     runs-on: self-hosted
     needs: ['Build']
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Execution
         run: |
-          docker-compose down
-          docker-compose up -d
+          docker compose down
+          docker compose up -d
 
   Cleanup:
     name: Cleanup

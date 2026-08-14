@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface CountdownItemProps {
   value: number;
   label: string;

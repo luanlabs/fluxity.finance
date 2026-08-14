@@ -1,6 +1,3 @@
-'use client';
-
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -22,7 +19,7 @@ const ContactUs = () => {
           <div className="flex gap-4 mt-8">
             <p>
               Questions? Reach out to us at
-              <Link href="mailto:support@fluxity.finance" target="blank" className="underline">
+              <Link href="mailto:support@fluxity.finance" className="underline">
                 <br />
                 support@fluxity.finance
               </Link>
@@ -35,12 +32,22 @@ const ContactUs = () => {
           <div className="flex flex-col gap-4 mt-8 w-[257px]">
             <p>Follow us on social media to stay updated on our latest updates and developments.</p>
             <div className="flex gap-4 mt-8">
-              <Link href={ExternalPages.GITHUB} target="blank">
-                <Image src={github} alt="Fluxity" className="select-none" />
+              <Link
+                href={ExternalPages.GITHUB}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Fluxity on GitHub"
+              >
+                <Image src={github} alt="GitHub" className="select-none" />
               </Link>
 
-              <Link href={ExternalPages.DISCORD} target="blank">
-                <Image src={discord} alt="Fluxity" className="select-none" />
+              <Link
+                href={ExternalPages.DISCORD}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Fluxity on Discord"
+              >
+                <Image src={discord} alt="Discord" className="select-none" />
               </Link>
             </div>
           </div>
